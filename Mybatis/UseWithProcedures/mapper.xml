@@ -1,6 +1,6 @@
 
+<!-- 返回多个结果集  （方法 一）  -->
 <!-- 需要注意的地方 statementType="CALLABLE" 不能少resultMap="count,orders" 这里返回多个结果集，如果有更多可以继续加 -->
-
   <resultMap type="Integer" id="count">  
     <result column="RecordCount"   jdbcType="INTEGER" javaType="Integer" />   
   </resultMap>  
@@ -10,8 +10,23 @@
   </resultMap> 
 
   <select id="getOrders" statementType="CALLABLE" parameterType="Map"  resultMap="count,orders" >
-      <![CDATA[ 
-          {call Page_Up_Get_OrderState(#{id,mode=IN,jdbcType=VARCHAR})}
-      ]]>
+    <![CDATA[ 
+        {call Page_Up_Get_OrderState(
+          #{id,mode=IN,jdbcType=VARCHAR}
+        )}
+    ]]>
   </select>
 <!-- ******************************************************************************************************* -->
+<!-- 返回多个结果集  （方法 二）  -->
+<!--  返回的参数值在传递进入的map中 -->
+<select id="querySourceInfo" statementType="CALLABLE" parameterType="Map" >  
+  <![CDATA[ 
+      {call  lookfor_history_main(  
+          #{tableName, mode=IN},  
+            #{colName, mode=IN},
+            #{oid, mode=IN},
+            #{var_result_value, jdbcType=VARCHAR ,mode=OUT},
+            #{var_result_value2, jdbcType=VARCHAR ,mode=OUT}
+        )}  
+  ]]>
+</select> 
