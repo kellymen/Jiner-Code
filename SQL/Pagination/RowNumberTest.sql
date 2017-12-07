@@ -1,4 +1,6 @@
 
+--ROW_NUMBER ( ) OVER ( [ PARTITION BY value_expression , ... [ n ] ] order_by_clause )
+
 dbcc freeproccache
 dbcc dropcleanbuffers
 set statistics time on
