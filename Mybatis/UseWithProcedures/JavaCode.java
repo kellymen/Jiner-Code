@@ -14,9 +14,7 @@
    System.out.println(((List<Integer>)results.get(0)).get(0));
    
    //第二条订单列表
-   System.out.println((List<OrderForm>)results.get(1));
-   
-/*****************************************************************/
+   System.out.println((List<OrderForm>)results.get(1));   
 
 /*******************返回多个结果集*******（方法 二）*******************/
 //Dao层的接口
