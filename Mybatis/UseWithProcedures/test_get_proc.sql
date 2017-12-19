@@ -11,7 +11,7 @@ DECLARE
   @error_code  int
   ,@error_msg  varchar(500)
   
-SET NOCOUNT ON
+SET NOCOUNT ON  --if ON, it well return -1; if OFF, it well return normal
 
 SELECT @error_code = 0, @error_msg = NULL
 
