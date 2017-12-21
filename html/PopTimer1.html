@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+ 
+ <div><button type="button" style="" onclick="alert('*****')">开始</button></div>  
+ 
+      <!------------------  重启操作 准备弹窗 --------------->  
+        <div id="reboot_pre" style="width: 450px; height: 200px; margin-left:auto; margin-right:auto; margin-top:200px; visibility:hidden; background: #F0F0F0; border:1px solid #00DB00; z-index:9999">  
+            <div style="width: 450px; height: 30px; background:#00DB00; line-height:30px;text-align: center;"><b>准备中</b></div>  
+            <br /><br />  
+            <div><p style="margin-left:50px">正在努力为您准备重启操作...   还需稍候 <span id="reboot_pre_time">4</span> 秒</p></div>  
+            <br />  
+            <div><button type="button" style="width:70px; height:30px; margin-left:340px" onclick="reboot_cancel()">取消</button></div>  
+        </div>  
+        <!------------------  重启操作 准备弹窗 --------------->  
+      
+        <!------------------  重启操作 进行弹窗 --------------->  
+        <div id="reboot_ing" style="width: 450px; height: 150px;  margin-left:auto; margin-right:auto; margin-top:-150px; visibility: hidden; background: #F0F0F0; border:1px solid #00DB00">  
+            <div style="width: 450px; height: 30px; background:#00DB00; line-height:30px;text-align: center;"><b>进行中</b></div>  
+            <br />  
+            <div><p style="margin-left:40px">重启操作正在进行中...   还需稍候 <span id="reboot_ing_time">14</span> 秒</p></div>  
+            <br />  
+            <div  id="progress_reboot" style="margin-left:40px;color:#00DB00;font-family:Arial;font-weight:bold;height:18px">|</div>  
+            <br />  
+        </div>  
+        <!------------------  重启操作 进行弹窗 --------------->  
+      
+      
+    <script type="text/javascript">  
+                  
+                var cancel_flag = 0;  
+                var already = 0;  
+      
+                /* 网页一加载就执行的操作 */  
+                window.onload = reboot();  
+      
+                /* 重启按钮的单击操作 */  
+                function reboot(){  
+                    //if(confirm("这个操作会断开现在所有的连接，并且重新启动您的设备，确定要继续操作吗？")){  
+                        document.getElementById("reboot_pre_time").innerHTML = 4;  
+                        document.getElementById("reboot_ing_time").innerHTML = 14;  
+                        document.all.progress_reboot.innerHTML = "|";  
+                        download_flag = 0;  
+                        cancel_flag = 0;  
+                        already = 0;  
+                        setTimeout("showDiv('reboot_pre')",500);  
+                        delayPre_reboot("reboot_pre_time");  
+                    //}  
+                }  
+                /* 重启准备弹窗计时 5秒 */  
+                function delayPre_reboot(str) {  
+                    if(!cancel_flag){  
+                        var delay = document.getElementById(str).innerHTML;  
+                        if(delay > 0) {  
+                            delay--;  
+                            document.getElementById(str).innerHTML = delay;  
+                            setTimeout("delayPre_reboot('reboot_pre_time')", 1000);  
+                        } else {  
+                            hideDiv("reboot_pre");  
+                            setTimeout("showDiv('reboot_ing')",500);  
+                            delayDo_reboot("reboot_ing_time");  
+                        }  
+                    }  
+                }  
+                /* 重启进行中弹窗计时 15秒 */  
+                function delayDo_reboot(str){  
+                    display_reboot(100);  
+                    var delay = document.getElementById(str).innerHTML;  
+                    if(delay > 0) {  
+                        delay--;  
+                        document.getElementById(str).innerHTML = delay;  
+                        setTimeout("delayDo_reboot('reboot_ing_time')", 1000);  
+                    } else {  
+                        hideDiv("reboot_ing");  
+                        alert("重启成功！");  
+                    }  
+                }  
+                /* 重启准备时 取消按钮的事件*/  
+                function reboot_cancel(){  
+                    cancel_flag = 1;  
+                    hideDiv("reboot_pre");  
+                    alert("您已经成功取消了重启操作！");  
+                }  
+                /* 显示弹窗 */  
+                function showDiv (str){  
+                    document.getElementById(str).style.visibility = "visible";  
+                }  
+                /* 隐藏弹窗 */  
+                function hideDiv (str){  
+                    document.getElementById(str).style.visibility = "hidden";  
+                }  
+      
+                /* 重启进行中弹窗计时，缓冲条的移动*/  
+                function display_reboot(max){  
+                     already++;  
+                     var dispObj = document.all.progress_reboot;  
+                     dispObj.style.width = 100.0*already/max+"px";  
+                     document.all.progress_reboot.innerHTML += "|||||";  
+                     var timer = window.setTimeout("display("+max+")",1000);  
+                     if (already >= max){  
+                        window.clearTimeout(timer);  
+                     }  
+                }  
+                   
+        </script>  
+</body>
+</html>
