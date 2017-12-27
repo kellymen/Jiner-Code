@@ -15,6 +15,8 @@ BEGIN RTY
   
   select * from OPENXML(@idoc, '/ArrayOfInt', 2) as T where T.text is not null
   
+  select * from OPENXML(@idoc, '/ArrayOfInt', 3) where nodetype = 3
+  
   EXEC sp_xml_removedocument @idoc
   
 END TRY
