@@ -41,3 +41,13 @@ public static BitSet fileToBitset(String path) {
         }  
         return null;
     } 
+
+public static List<Integer> getListFormBitSet(BitSet bitset){
+  List<Integet> list = new ArrayList<Integer>(bitset.cardinality());
+  for(int i = 0; i < bitset.length(); i++){
+    if(bitset.get(i)){
+      list.add(i);
+    }
+  }
+  return list;
+}
