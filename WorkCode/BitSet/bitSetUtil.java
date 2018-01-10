@@ -51,3 +51,12 @@ public static List<Integer> getListFormBitSet(BitSet bitset){
   }
   return list;
 }
+
+public static List<Integer> getListWithPage(int pageIndex, int pageSize, List<Integer> originList){
+  int size = originList.size();
+  if((pageIndex * pageSize) <= size){
+    return originList.subList((pageIndex - 1) * pageSize, pageIndex * pageSize);
+  }else{
+    return originList.subList(size - (size % pageSize), size);
+  }
+}
