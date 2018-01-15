@@ -1,4 +1,7 @@
 
+Nginx反向代理+Tomcat+Springmvc获取用户访问ip
+https://www.cnblogs.com/chen-lhx/p/7233963.html
+
 nginx配置 spring MVC
 http://blog.csdn.net/computerinbook/article/details/54839742
 
