@@ -1,4 +1,7 @@
 
+nginx的location配置详解   --mark
+http://blog.csdn.net/tjcyjd/article/details/50897959
+
 Nginx反向代理+Tomcat+Springmvc获取用户访问ip
 https://www.cnblogs.com/chen-lhx/p/7233963.html
 
