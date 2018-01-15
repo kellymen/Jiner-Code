@@ -1,4 +1,7 @@
 
+nginx配置 spring MVC
+http://blog.csdn.net/computerinbook/article/details/54839742
+
 loading 特效
 https://loading.io/
 
