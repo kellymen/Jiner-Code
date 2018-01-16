@@ -1,3 +1,5 @@
+spring-mvc + jsp 拦截器下配置欢迎页面
+https://www.cnblogs.com/mabaishui/p/5569349.html
 
 java生成图片验证码
 http://blog.csdn.net/zhulin40/article/details/51899487
