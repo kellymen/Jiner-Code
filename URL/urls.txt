@@ -1,3 +1,7 @@
+
+NGINX 配置404错误页面转向
+https://www.cnblogs.com/jiangyao/archive/2010/07/10/1774981.html
+
 spring-mvc + jsp 拦截器下配置欢迎页面
 https://www.cnblogs.com/mabaishui/p/5569349.html
 
