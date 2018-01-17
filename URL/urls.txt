@@ -1,4 +1,7 @@
 
+Nginx + Tomcat 动静分离实现负载均衡
+https://www.cnblogs.com/wunaozai/p/5001742.html
+
 NGINX 配置404错误页面转向
 https://www.cnblogs.com/jiangyao/archive/2010/07/10/1774981.html
 
