@@ -8,11 +8,13 @@
 <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
 <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
 <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+  <pattern>%d | %t | %p | %C | %m%n%ex</pattern>
 </encoder>
 </appender>
 
 <!-- 按照每天生成日志文件 -->
 <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  <file>log/xxx.log</file>
 <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 <!--日志文件输出的文件名-->
 <FileNamePattern>${LOG_HOME}/TestWeb.log.%d{yyyy-MM-dd}.log</FileNamePattern>
