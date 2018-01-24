@@ -1,4 +1,8 @@
 
+网页版录音功能
+http://blog.csdn.net/sweetsuzyhyf/article/details/50469881
+https://www.cnblogs.com/peach/p/6739054.html
+
 Nginx + Tomcat 动静分离实现负载均衡
 https://www.cnblogs.com/wunaozai/p/5001742.html
 
