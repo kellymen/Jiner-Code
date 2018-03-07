@@ -27,6 +27,9 @@ http://blog.csdn.net/ruixue0117/article/details/22829557
 https://www.cnblogs.com/taobd/p/6682630.html
 https://www.cnblogs.com/newwind/p/5650215.html
 
+网页验证码存储方案
+http://blog.csdn.net/u012076316/article/details/50073345
+
 nginx的location配置详解   --mark
 http://blog.csdn.net/tjcyjd/article/details/50897959
 https://www.cnblogs.com/gpfeisoft/p/4823919.html
