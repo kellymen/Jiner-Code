@@ -1,4 +1,7 @@
 
+textarea  获取换行符和空格
+http://blog.csdn.net/hj7jay/article/details/74279967
+
 java 最全正则表达式
 http://blog.csdn.net/allwefantasy/article/details/3136570
 
