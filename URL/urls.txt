@@ -79,6 +79,10 @@ http://yhjhappy234.blog.163.com/blog/static/316328322012455714892/
 umeditor 拖拽bug
 http://wzdark.github.io/personalInfo/2015/10/23/umeditor_bug.html
 
+umeditor添加自定义按钮
+http://www.it266.com/blog/2014/50.html
+http://blog.csdn.net/u013884068/article/details/53023821
+
 umeditor 添加图片上传loading动画
 https://onlyke.com/html/157.html
 
